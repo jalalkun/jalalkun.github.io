@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jalaluddin Muhammad Karim - Senior Android Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#faf9fa",
+                    "inverse-on-surface": "#f2f0f1",
+                    "on-secondary-fixed": "#171c20",
+                    "secondary-fixed": "#dfe3e8",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "inverse-surface": "#303031",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#e7ebff",
+                    "on-secondary-fixed-variant": "#42474b",
+                    "tertiary": "#6d5e00",
+                    "surface-tint": "#2259bf",
+                    "surface-container": "#efedee",
+                    "secondary-fixed-dim": "#c2c7cc",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#bfab49",
+                    "surface": "#faf9fa",
+                    "on-background": "#1b1c1d",
+                    "outline-variant": "#c3c6d5",
+                    "surface-dim": "#dbdadb",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#434653",
+                    "background": "#faf9fa",
+                    "secondary": "#5a5f63",
+                    "on-primary-fixed-variant": "#00419d",
+                    "on-surface": "#1b1c1d",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#dcc661",
+                    "surface-container-low": "#f5f3f4",
+                    "primary-fixed": "#d9e2ff",
+                    "on-primary-fixed": "#001946",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#211b00",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#f9e37a",
+                    "secondary-container": "#dfe3e8",
+                    "surface-container-high": "#e9e8e9",
+                    "outline": "#737784",
+                    "on-tertiary-container": "#4a3f00",
+                    "primary-container": "#3366cc",
+                    "primary": "#094cb2",
+                    "on-tertiary-fixed-variant": "#524600",
+                    "on-secondary-container": "#606569",
+                    "surface-container-highest": "#e3e2e3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e3e2e3",
+                    "inverse-primary": "#b1c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif", "serif"],
+                    "display": ["Noto Serif", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Public Sans", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Noto Serif', serif; }
+
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid #3366cc;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5 max-w-7xl mx-auto bg-background/90 backdrop-blur-md border-b border-surface-container font-label tracking-wide text-on-surface">
+<div class="text-xl font-headline font-bold text-on-surface">jalalkun</div>
+<!-- Web Nav -->
+<div class="hidden md:flex items-center gap-10">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-semibold" href="#experience">Experience</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-semibold" href="#skills">Skills</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-semibold" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-semibold" href="#about">About</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden md:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded bg-surface-container-low hover:bg-surface-container border border-outline-variant transition-colors text-primary" href="https://drive.google.com/file/d/1A80315FCrZk4_7LOaxsXxxzV3xdjIX96/view" target="_blank">
+<span class="material-symbols-outlined text-[18px]">download</span>
+            Download CV
+        </a>
+<!-- Mobile Menu Toggle -->
+<button id="menuToggle" class="md:hidden text-on-background hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenu" class="fixed inset-0 z-40 hidden">
+<div class="absolute inset-0 bg-background/80 backdrop-blur-md" onclick="closeMobileMenu()"></div>
+<div class="absolute right-0 top-0 h-full w-72 bg-surface-container-lowest border-l border-outline-variant shadow-xl p-8 flex flex-col gap-6">
+<button class="self-end text-on-surface-variant hover:text-primary transition-colors" onclick="closeMobileMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-lg font-semibold" href="#experience" onclick="closeMobileMenu()">Experience</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-lg font-semibold" href="#skills" onclick="closeMobileMenu()">Skills</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-lg font-semibold" href="#projects" onclick="closeMobileMenu()">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-lg font-semibold" href="#about" onclick="closeMobileMenu()">About</a>
+<a class="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold rounded bg-primary text-on-primary font-semibold" href="https://drive.google.com/file/d/1A80315FCrZk4_7LOaxsXxxzV3xdjIX96/view" target="_blank">
+<span class="material-symbols-outlined text-[18px]">download</span>
+Download CV
+</a>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 w-full max-w-5xl mx-auto px-6 pb-24 space-y-40">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-16 flex flex-col justify-center" id="hero">
+<div class="relative z-10 w-full">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 mb-8 rounded-full bg-surface-container-low border border-outline-variant text-xs font-label uppercase tracking-widest text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Available for new opportunities
+            </div>
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] text-on-background">
+                Jalaluddin <br/>
+                Muhammad Karim
+            </h1>
+<h2 class="text-2xl md:text-3xl font-headline text-primary font-medium mb-8 max-w-3xl leading-snug">
+                Senior Android Engineer | 7+ Years Crafting Enterprise-Grade Mobile Experiences
+            </h2>
+<p class="font-body text-lg md:text-xl text-on-surface-variant mb-12 max-w-2xl leading-relaxed">
+                Expertise in Kotlin, Jetpack Compose, KMM, and scaling robust applications to over 800k+ MAU with clean, maintainable architecture.
+            </p>
+<div class="flex flex-wrap items-center gap-6">
+<a class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded bg-primary text-on-primary font-label uppercase tracking-wider font-semibold hover:bg-primary/90 transition-colors shadow-sm" href="#projects">
+                    View Projects/App
+                    <span class="material-symbols-outlined text-[18px]" style='font-variation-settings: "FILL" 1;'>arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded bg-surface-container-lowest border border-outline text-on-surface font-label uppercase tracking-wider font-semibold hover:bg-surface-container-low transition-colors shadow-sm" href="https://drive.google.com/file/d/1A80315FCrZk4_7LOaxsXxxzV3xdjIX96/view" target="_blank">
+                    Download CV
+                    <span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="scroll-mt-32" id="about">
+<h3 class="font-headline text-4xl font-bold tracking-tight mb-12 flex items-center gap-4 text-on-background">
+            About Me
+        </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Large Card -->
+<div class="md:col-span-2 bg-surface-container-lowest border border-outline-variant p-10 hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-6 text-4xl">architecture</span>
+<h4 class="font-headline text-2xl font-bold mb-4 text-on-surface">Scalable Architectures</h4>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed">
+                    I specialize in designing and implementing robust, clean architectures (MVVM, MVI) that scale elegantly. My approach ensures maintainability and high performance across complex enterprise applications, reducing technical debt and enabling rapid feature delivery.
+                </p>
+</div>
+<!-- Small Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-5 text-3xl">devices</span>
+<h4 class="font-headline text-xl font-bold mb-3 text-on-surface">Jetpack Compose</h4>
+<p class="text-on-surface-variant font-body leading-relaxed">
+                    Expert in modernizing legacy XML UIs to declarative Compose, creating fluid, responsive, and reusable component libraries.
+                </p>
+</div>
+<!-- Small Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-8 hover:shadow-md transition-shadow md:col-span-1">
+<span class="material-symbols-outlined text-primary mb-5 text-3xl">sync_alt</span>
+<h4 class="font-headline text-xl font-bold mb-3 text-on-surface">KMM Integration</h4>
+<p class="text-on-surface-variant font-body leading-relaxed">
+                    Leveraging Kotlin Multiplatform Mobile to share core business logic across platforms without sacrificing native performance.
+                </p>
+</div>
+<!-- Stats Card -->
+<div class="md:col-span-2 bg-primary-container text-on-primary-container p-10 flex flex-col sm:flex-row items-center justify-around gap-8">
+<div class="text-center">
+<div class="font-headline text-5xl font-bold mb-2">7+</div>
+<div class="text-sm font-label uppercase tracking-widest opacity-90">Years Exp.</div>
+</div>
+<div class="w-px h-16 bg-on-primary-container/20 hidden sm:block"></div>
+<div class="text-center">
+<div class="font-headline text-5xl font-bold mb-2">800k+</div>
+<div class="text-sm font-label uppercase tracking-widest opacity-90">Active Users</div>
+</div>
+<div class="w-px h-16 bg-on-primary-container/20 hidden sm:block"></div>
+<div class="text-center">
+<div class="font-headline text-5xl font-bold mb-2">4+</div>
+<div class="text-sm font-label uppercase tracking-widest opacity-90">Major Apps</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Work Experience -->
+<section class="scroll-mt-32" id="experience">
+<h3 class="font-headline text-4xl font-bold tracking-tight mb-16 flex items-center gap-4 text-on-background">
+            Experience
+        </h3>
+<div class="relative border-l border-outline-variant ml-4 md:ml-6 space-y-16 pb-4">
+<!-- Experience Item 1 -->
+<div class="relative pl-10 md:pl-16">
+<div class="absolute w-4 h-4 rounded-full bg-primary -left-[8px] top-1.5 border-2 border-surface-container-lowest"></div>
+<div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-3">
+<h4 class="font-headline text-2xl font-bold text-on-surface">Senior Android Engineer</h4>
+<span class="text-sm font-label uppercase tracking-widest text-primary mt-2 md:mt-0 font-semibold">Dec 2023 - Present</span>
+</div>
+<div class="text-xl text-on-surface-variant font-headline italic mb-6">Bluebird Group</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-8">
+<ul class="space-y-4 text-on-surface-variant font-body text-lg list-none">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-[20px] mt-1 shrink-0">check</span>
+<span class="">Spearheaded development for the MyBluebird app, serving an active user base of over 800k+ MAU.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-[20px] mt-1 shrink-0">check</span>
+<span class="">Architected and integrated Kotlin Multiplatform Mobile (KMM) for core business logic layer.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-[20px] mt-1 shrink-0">check</span>
+<span class="">Led the comprehensive UI migration strategy from legacy XML to modern Jetpack Compose.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative pl-10 md:pl-16">
+<div class="absolute w-3 h-3 rounded-full bg-surface-variant -left-[6px] top-2.5 border-2 border-outline-variant"></div>
+<div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-3">
+<h4 class="font-headline text-2xl font-bold text-on-surface">Android Engineer</h4>
+<span class="text-sm font-label uppercase tracking-widest text-on-surface-variant mt-2 md:mt-0">Mar 2022 - Nov 2023</span>
+</div>
+<div class="text-xl text-on-surface-variant font-headline italic mb-6">PT. Serasi Autoraya</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-8">
+<ul class="space-y-4 text-on-surface-variant font-body text-lg list-none">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-1 shrink-0">horizontal_rule</span>
+<span class="">Drove extensive UI modernization initiatives, successfully transitioning complex views from XML to Compose.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-1 shrink-0">horizontal_rule</span>
+<span class="">Executed deep architecture refactoring to improve testability and reduce app crash rates.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Experience Item 3 -->
+<div class="relative pl-10 md:pl-16">
+<div class="absolute w-3 h-3 rounded-full bg-surface-variant -left-[6px] top-2.5 border-2 border-outline-variant"></div>
+<div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-3">
+<h4 class="font-headline text-2xl font-bold text-on-surface">Android Developer</h4>
+<span class="text-sm font-label uppercase tracking-widest text-on-surface-variant mt-2 md:mt-0">Prior Roles</span>
+</div>
+<div class="text-xl text-on-surface-variant font-headline italic mb-6">Otozilla &amp; Jobready</div>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed">
+                    Developed and launched niche social media platforms and specialized job-seeking applications from the ground up, focusing on engaging user experiences and robust API integrations.
+                </p>
+</div>
+</div>
+</section>
+<!-- Technical Arsenal -->
+<section class="scroll-mt-32" id="skills">
+<h3 class="font-headline text-4xl font-bold tracking-tight mb-12 flex items-center gap-4 text-on-background">
+            Technical Arsenal
+        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<!-- Category 1 -->
+<div class="bg-surface-container-lowest border-t-2 border-outline-variant pt-6">
+<h4 class="font-label text-sm uppercase tracking-widest text-on-surface-variant mb-6 font-semibold">Languages &amp; Core</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Kotlin</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Coroutines</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Flow</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Java</span>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="bg-surface-container-lowest border-t-2 border-outline-variant pt-6">
+<h4 class="font-label text-sm uppercase tracking-widest text-on-surface-variant mb-6 font-semibold">UI &amp; Views</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-primary/10 border border-primary/30 text-primary-fixed-variant text-sm font-body font-medium cursor-default">Jetpack Compose</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Material 3</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">XML Layouts</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Custom Views</span>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="bg-surface-container-lowest border-t-2 border-outline-variant pt-6">
+<h4 class="font-label text-sm uppercase tracking-widest text-on-surface-variant mb-6 font-semibold">Architecture &amp; DI</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Clean Architecture</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">MVVM / MVI</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Koin</span>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="bg-surface-container-lowest border-t-2 border-outline-variant pt-6">
+<h4 class="font-label text-sm uppercase tracking-widest text-on-surface-variant mb-6 font-semibold">Cross-Platform &amp; Tools</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-primary/5 border border-primary/20 text-primary text-sm font-body font-medium cursor-default">KMP</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Git</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">CI/CD</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Gradle KTS</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-t-2 border-outline-variant pt-6">
+<h4 class="font-label text-sm uppercase tracking-widest text-on-surface-variant mb-6 font-semibold">DATA &amp; NETWORKING</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Room Database</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">DataStore</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Retrofit</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">Ktor</span>
+</div>
+</div><div class="bg-surface-container-lowest border-t-2 border-outline-variant pt-6">
+<h4 class="font-label text-sm uppercase tracking-widest text-on-surface-variant mb-6 font-semibold">TESTING &amp; WORKFLOW</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">JUnit / MockK</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">SDD</span>
+<span class="px-4 py-2 bg-surface border border-outline-variant text-on-surface text-sm font-body hover:border-primary transition-colors cursor-default">AI-Assisted Dev (Claude Code, Gemini CLI)</span>
+</div>
+</div></div>
+</section>
+<!-- Featured Projects -->
+<section class="scroll-mt-32" id="projects">
+<h3 class="font-headline text-4xl font-bold tracking-tight mb-12 flex items-center gap-4 text-on-background">
+            Featured Projects
+        </h3>
+<div class="space-y-12">
+<!-- Featured Project Card -->
+<div class="group relative overflow-hidden bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors">
+<div class="relative z-10 flex flex-col md:flex-row h-full">
+<!-- Content Side -->
+<div class="p-10 md:w-1/2 flex flex-col justify-center border-b md:border-b-0 md:border-r border-outline-variant">
+<div class="w-14 h-14 bg-surface-container-low border border-outline-variant flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" style='font-variation-settings: "FILL" 1;'>account_balance_wallet</span>
+</div>
+<h4 class="font-headline text-3xl font-bold mb-6 text-on-surface">DUiT - Smart Budgeting &amp; Tracker</h4>
+<p class="text-on-surface-variant font-body text-lg mb-8 leading-relaxed">A personal finance application featuring Smart Cycle Budgeting and a Daily Sustainable Target Spend (DSTS) algorithm. Developed entirely in native Android using Kotlin and Jetpack Compose, it implements Clean Architecture principles to ensure fast, secure, and 100% offline performance.</p>
+<div class="flex flex-wrap gap-3 mb-10"><span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container-low border border-outline-variant px-3 py-1.5 font-semibold">Native Android</span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container-low border border-outline-variant px-3 py-1.5 font-semibold">Kotlin</span>
+<span class="text-xs font-label uppercase tracking-widest text-primary bg-primary/10 px-3 py-1.5 font-semibold">Jetpack Compose</span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container-low border border-outline-variant px-3 py-1.5 font-semibold">Clean Architecture</span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container-low border border-outline-variant px-3 py-1.5 font-semibold">MVVM</span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container-low border border-outline-variant px-3 py-1.5 font-semibold">Room DB</span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container-low border border-outline-variant px-3 py-1.5 font-semibold">Offline-First</span></div>
+<div class="mt-auto">
+<a class="inline-flex items-center gap-2 text-primary hover:text-primary-fixed-dim font-label uppercase tracking-widest font-bold transition-colors" href="https://play.google.com/store/apps/details?id=com.jalalkun.pencatatkeuangan" target="_blank">
+                                Visit Landing Page
+                                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Visual Side -->
+<div class="md:w-1/2 bg-surface-container p-10 flex items-center justify-center min-h-[400px]"><div class="relative w-full max-w-[320px] aspect-[9/19] overflow-hidden rounded-[2rem] border-[6px] border-surface-container-lowest shadow-2xl">
+<img alt="Personal Finance App Screenshot" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujZfGr9N3pN0z_Zb7kL5O4oxi9PZc6IwgeFHivKpaLt7svWyCsO5m9xES2_aX9qK8JTUfMrDrYTm3P7Ts3ym1obAKaW_hVJRNKybOxLUQ9oyG7Tt7C8a6jWh8XRS46bM_5MVYKTgiQxa6BoG9xKB9BRPENzrLVFb27FntSvQBhu04ro9qHLBsO6lGFvkHU4TQBKTBlHLGojRC5hmewm6WGyxX3Ri6zDiDWzWIhHp5SS3QmQqmKBmgMvNIUJgLucxhMjku3OPeqNPes"/>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-outline-variant bg-surface-container-lowest w-full">
+<div class="w-full py-16 px-6 flex flex-col md:flex-row justify-between items-center gap-8 max-w-5xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-3">
+<div class="text-xl font-headline font-bold text-on-surface">jalalkun</div>
+<p class="font-body text-sm text-on-surface-variant">© 2026 Jalaluddin Muhammad Karim. Built with precision.</p>
+</div>
+<div class="flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label uppercase tracking-widest text-xs font-semibold" href="https://linkedin.com/in/jalaludin" rel="noopener noreferrer" target="_blank">
+                LinkedIn
+            </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label uppercase tracking-widest text-xs font-semibold" href="https://github.com/jalalkun" rel="noopener noreferrer" target="_blank">
+                GitHub
+            </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label uppercase tracking-widest text-xs font-semibold" href="mailto:jalaludin.karim@outlook.com">
+                Email
+            </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label uppercase tracking-widest text-xs font-semibold" href="https://drive.google.com/file/d/1A80315FCrZk4_7LOaxsXxxzV3xdjIX96/view" target="_blank">
+                Resume
+            </a>
+</div>
+</div>
+</footer>
+<script>
+function closeMobileMenu() {
+document.getElementById('mobileMenu').classList.add('hidden');
+document.body.style.overflow = '';
+}
+document.getElementById('menuToggle').addEventListener('click', function() {
+document.getElementById('mobileMenu').classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+</script>
+</body></html>
